@@ -13,6 +13,12 @@
 		2032FC2C261C976700CAE77E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032FC2A261C976700CAE77E /* Main.storyboard */; };
 		2032FC2E261C976800CAE77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2032FC2D261C976800CAE77E /* Assets.xcassets */; };
 		2032FC31261C976800CAE77E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032FC2F261C976800CAE77E /* LaunchScreen.storyboard */; };
+		204EAECA261F32140067F5A5 /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204EAEC8261F32140067F5A5 /* StoriesTableViewCell.swift */; };
+		204EAECB261F32140067F5A5 /* StoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204EAEC9261F32140067F5A5 /* StoriesTableViewCell.xib */; };
+		204EAECF262437E40067F5A5 /* ImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204EAECD262437E40067F5A5 /* ImagesTableViewCell.swift */; };
+		204EAED0262437E40067F5A5 /* ImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204EAECE262437E40067F5A5 /* ImagesTableViewCell.xib */; };
+		204EAED6262F8BC50067F5A5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204EAED4262F8BC50067F5A5 /* CollectionViewCell.swift */; };
+		204EAED7262F8BC50067F5A5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204EAED5262F8BC50067F5A5 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		2032FC2D261C976800CAE77E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2032FC30261C976800CAE77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2032FC32261C976800CAE77E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		204EAEC8261F32140067F5A5 /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		204EAEC9261F32140067F5A5 /* StoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		204EAECD262437E40067F5A5 /* ImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTableViewCell.swift; sourceTree = "<group>"; };
+		204EAECE262437E40067F5A5 /* ImagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesTableViewCell.xib; sourceTree = "<group>"; };
+		204EAED4262F8BC50067F5A5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		204EAED5262F8BC50067F5A5 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,10 @@
 		2032FC23261C976700CAE77E /* Instagram first page */ = {
 			isa = PBXGroup;
 			children = (
+				204EAEC8261F32140067F5A5 /* StoriesTableViewCell.swift */,
+				204EAEC9261F32140067F5A5 /* StoriesTableViewCell.xib */,
+				204EAECD262437E40067F5A5 /* ImagesTableViewCell.swift */,
+				204EAECE262437E40067F5A5 /* ImagesTableViewCell.xib */,
 				2032FC24261C976700CAE77E /* AppDelegate.swift */,
 				2032FC26261C976700CAE77E /* SceneDelegate.swift */,
 				2032FC28261C976700CAE77E /* ViewController.swift */,
@@ -63,6 +79,8 @@
 				2032FC2D261C976800CAE77E /* Assets.xcassets */,
 				2032FC2F261C976800CAE77E /* LaunchScreen.storyboard */,
 				2032FC32261C976800CAE77E /* Info.plist */,
+				204EAED4262F8BC50067F5A5 /* CollectionViewCell.swift */,
+				204EAED5262F8BC50067F5A5 /* CollectionViewCell.xib */,
 			);
 			path = "Instagram first page";
 			sourceTree = "<group>";
@@ -125,7 +143,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2032FC31261C976800CAE77E /* LaunchScreen.storyboard in Resources */,
+				204EAECB261F32140067F5A5 /* StoriesTableViewCell.xib in Resources */,
+				204EAED7262F8BC50067F5A5 /* CollectionViewCell.xib in Resources */,
 				2032FC2E261C976800CAE77E /* Assets.xcassets in Resources */,
+				204EAED0262437E40067F5A5 /* ImagesTableViewCell.xib in Resources */,
 				2032FC2C261C976700CAE77E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +160,9 @@
 			files = (
 				2032FC29261C976700CAE77E /* ViewController.swift in Sources */,
 				2032FC25261C976700CAE77E /* AppDelegate.swift in Sources */,
+				204EAECA261F32140067F5A5 /* StoriesTableViewCell.swift in Sources */,
+				204EAED6262F8BC50067F5A5 /* CollectionViewCell.swift in Sources */,
+				204EAECF262437E40067F5A5 /* ImagesTableViewCell.swift in Sources */,
 				2032FC27261C976700CAE77E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Instagram first page/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Instagram first page/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
