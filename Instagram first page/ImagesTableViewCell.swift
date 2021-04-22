@@ -10,9 +10,14 @@ import UIKit
 class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
 
+    @IBOutlet weak var collectionView:  UICollectionView!
+    @IBOutlet weak var myLabel: UILabel!
+    
     
     private var model: [String]?
 
+  
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -26,14 +31,15 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
+        
     }
     
-    func configure(with model: [String]) {
+    func configure(with model: CellData) {
 
-            self.model = model
+        self.model = model.image
+        self.myLabel.text = model.comment
+
     }
-
-    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -41,8 +47,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         // Configure the view for the selected state
     }
     
-    @IBOutlet weak var collectionView:  UICollectionView!
-    
+ 
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

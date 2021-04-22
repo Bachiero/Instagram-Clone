@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,37 +18,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="567" height="458"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LKl-8e-OsW">
-                        <rect key="frame" x="0.0" y="0.0" width="567" height="320"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrs-gu-pIF">
+                        <rect key="frame" x="0.0" y="427" width="567" height="31"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="320" id="usU-W1-I96"/>
+                            <constraint firstAttribute="height" constant="31" id="PdK-Kd-SL9"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-RB-jCE">
-                        <rect key="frame" x="0.0" y="320" width="567" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="3nd-BR-jdo"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="LKl-8e-OsW" secondAttribute="trailing" id="Oo4-PA-Q9X"/>
-                <constraint firstItem="ATZ-RB-jCE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UxL-KL-t12"/>
-                <constraint firstItem="ATZ-RB-jCE" firstAttribute="top" secondItem="LKl-8e-OsW" secondAttribute="bottom" id="XV2-If-pdG"/>
-                <constraint firstItem="LKl-8e-OsW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="q9I-SD-xEC"/>
-                <constraint firstAttribute="trailing" secondItem="ATZ-RB-jCE" secondAttribute="trailing" id="sJI-N2-nf8"/>
-                <constraint firstItem="LKl-8e-OsW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tue-dV-fHu"/>
+                <constraint firstAttribute="bottom" secondItem="mrs-gu-pIF" secondAttribute="bottom" id="QUU-Kd-PUi"/>
+                <constraint firstItem="mrs-gu-pIF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tog-t9-Ids"/>
+                <constraint firstItem="mrs-gu-pIF" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="oBM-OA-Met"/>
             </constraints>
             <size key="customSize" width="567" height="458"/>
             <connections>
-                <outlet property="myImageView" destination="LKl-8e-OsW" id="t3L-hC-Dbh"/>
+                <outlet property="myLabel" destination="mrs-gu-pIF" id="jiq-2L-tg3"/>
             </connections>
-            <point key="canvasLocation" x="223.91304347826087" y="128.57142857142856"/>
+            <point key="canvasLocation" x="223.91304347826087" y="127.90178571428571"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

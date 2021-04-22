@@ -23,10 +23,6 @@ class CircleCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .white
         imageView.layer.borderWidth = 2
         imageView.layer.borderColor = UIColor.link.cgColor
-        
-        
-      
-        
         return imageView
     }()
     
@@ -34,7 +30,6 @@ class CircleCollectionViewCell: UICollectionViewCell {
         
         return UINib(nibName: "CircleCollectionViewCell", bundle: nil )
     }
-    
     
     
     override init(frame: CGRect) {
@@ -53,12 +48,6 @@ class CircleCollectionViewCell: UICollectionViewCell {
         myImageView.frame = contentView.bounds
     }
     
-    
-//    public func configure(with model: cellData) {
-//        self.imageview.images = cellData.init(cell: celldata.cell, label: celldata.label, comment: cell.data.comment, image: celldata.image)
-//
-//    }
-    
     public func configure(with name: String) {
         myImageView.image = UIImage(named: name)
 
@@ -70,8 +59,9 @@ class CircleCollectionViewCell: UICollectionViewCell {
 class RectCollectionViewCell : UICollectionViewCell {
     
     
-    
     static let identifier = "RectCollectionViewCell"
+    
+    @IBOutlet var myLabel: UITextView?
     
     private var myImageView: UIImageView = {
         let imageView = UIImageView()
@@ -83,11 +73,11 @@ class RectCollectionViewCell : UICollectionViewCell {
 //        imageView.backgroundColor = .blue
         imageView.layer.borderWidth = 2
 //        imageView.layer.borderColor = UIColor.link.cgColor
-
+        
         
         return imageView
     }()
-    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -106,6 +96,7 @@ class RectCollectionViewCell : UICollectionViewCell {
         super.init(frame: frame)
         
         contentView.addSubview(myImageView)
+
     }
     
     required init?(coder: NSCoder) {
@@ -120,6 +111,8 @@ class RectCollectionViewCell : UICollectionViewCell {
     public func configure(with name: String) {
 
         myImageView.image = UIImage(named: name)
+        
+       
     }
 
     
