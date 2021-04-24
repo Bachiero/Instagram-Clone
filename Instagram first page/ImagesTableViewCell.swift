@@ -12,9 +12,12 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
 
     @IBOutlet weak var collectionView:  UICollectionView!
     @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var postAuthor: UIImageView!
     
     
     private var model: [String]?
+    private var authorImage: [String]?
 
   
     
@@ -32,13 +35,18 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
         
+
+        
     }
     
     func configure(with model: CellData) {
 
         self.model = model.image
         self.myLabel.text = model.comment
-
+        self.author.text = model.label
+        self.authorImage = model.postAuthor
+        
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

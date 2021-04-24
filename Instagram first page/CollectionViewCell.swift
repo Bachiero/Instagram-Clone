@@ -58,10 +58,11 @@ class CircleCollectionViewCell: UICollectionViewCell {
 
 class RectCollectionViewCell : UICollectionViewCell {
     
+
     
     static let identifier = "RectCollectionViewCell"
     
-    @IBOutlet var myLabel: UITextView?
+    
     
     private var myImageView: UIImageView = {
         let imageView = UIImageView()
@@ -115,14 +116,4 @@ class RectCollectionViewCell : UICollectionViewCell {
        
     }
 
-    
-    //function for configure the cell with image, label, text, and comment. dont know how to make it yet..
-    
-//    public func configure(with model: cellData) {
-//        self.myLabel.text = model.label
-//        self.myImageView1.image =  UIImage(named: model.image)
-//
-//    }
-    
 }
-

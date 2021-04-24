@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="-1658" y="-325"/>
         </scene>
-        <!--Instagram-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagram_first_page" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +87,56 @@
                             <constraint firstItem="yzw-ZO-2Iv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nP0-N7-fMf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Instagram" id="v8i-La-bPQ"/>
+                    <navigationItem key="navigationItem" id="v8i-La-bPQ">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="Screenshot 2021-04-24 at 15.40.32" style="plain" id="PNQ-gb-Var">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RfD-CM-zzk">
+                                <rect key="frame" x="20" y="0.0" width="168" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="42"/>
+                                <state key="normal" title="Instagram">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    </preferredSymbolConfiguration>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="eX6-k0-D7o">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2q4-sb-G26" userLabel="paperline">
+                                    <rect key="frame" x="364" y="8.5" width="30" height="27"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="paperplane" catalog="system"/>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="yEl-xO-Ole">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XW4-HN-ikU" userLabel="heart">
+                                    <rect key="frame" x="326" y="3.5" width="30" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="heart" catalog="system"/>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="9d4-Hs-nZe">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MO1-Wr-B38" userLabel="plus">
+                                    <rect key="frame" x="288" y="11" width="30" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="plus.app" catalog="system"/>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                        <connections>
+                            <outlet property="backBarButtonItem" destination="PNQ-gb-Var" id="61o-y1-UQy"/>
+                            <outlet property="leftBarButtonItem" destination="PNQ-gb-Var" id="49H-FV-dYd"/>
+                            <outlet property="rightBarButtonItem" destination="eX6-k0-D7o" id="p0i-vc-Z16"/>
+                            <outlet property="titleView" destination="RfD-CM-zzk" id="sA4-fy-xg2"/>
+                        </connections>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="yzw-ZO-2Iv" id="vfa-7u-I7A"/>
                     </connections>
@@ -154,11 +203,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Screenshot 2021-04-24 at 15.40.32" width="308" height="102"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

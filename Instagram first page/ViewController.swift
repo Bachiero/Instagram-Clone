@@ -21,15 +21,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private var firstVar = ["car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3"]
     private var secondVar = ["panda1", "panda2", "panda3","panda1", "panda2", "panda3","panda1", "panda2", "panda3","panda1", "panda2", "panda3"]
     private var thirdVar = ["cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3"]
-    private var defVar = ["car1", "cat1", "panda1","car1", "cat1", "panda1","car1", "cat1", "panda1"]
+    private var otherVar = ["car1", "cat1", "panda1","car1", "cat1", "panda1","car1", "cat1", "panda1"]
+    private var postAuthor1 = ["car1"]
+    private var postAuthor2 = ["car3"]
+    private var postAuthor3 = ["car2"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        arrayOfCellData = [ CellData(type: .story, label: "This is first", comment: "Comment here...",image: firstVar),
-                            CellData(type: .post, label: "This is second", comment: "Comment here...",image: secondVar),
-                            CellData(type: .post, label: "This is first", comment: "Comment here...",image: thirdVar),
-                            CellData(type: .post , label: "This is first", comment: "Comment here...",image: defVar)]
+        arrayOfCellData = [ CellData(type: .story, label: "Pablo_Escobar", comment: "Liked by .... ",image: firstVar, postAuthor: postAuthor1),
+                            CellData(type: .post, label: "Maseratti_lover", comment: "Great look",image: secondVar, postAuthor: postAuthor2),
+                            CellData(type: .post, label: "Ray99", comment: "random comment",image: thirdVar, postAuthor: postAuthor3),
+                            CellData(type: .post , label: "Adriana_95", comment: "yes, yes",image: otherVar, postAuthor: postAuthor3)]
                            
         
         tableView.delegate = self
@@ -37,7 +41,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView?.register(UINib(nibName: "StoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "StoriesTableViewCell")
         tableView?.register(UINib(nibName: "ImagesTableViewCell", bundle: nil), forCellReuseIdentifier: "ImagesTableViewCell")
         
+        
+        
     }
+    
     
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,7 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case .story:
             return 120
         case .post:
-            return 350
+            return 450
             
         }
     }
