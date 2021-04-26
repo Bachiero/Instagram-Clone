@@ -4,7 +4,7 @@
 //
 //  Created by Bacho Bitsadze on 22.04.21.
 //
-
+import UIKit
 import Foundation
 
 struct CellData {
@@ -13,9 +13,9 @@ struct CellData {
     let label: String
     let comment: String
     let image: [String]
-    let postAuthor: [String]
+    let postAuthor: UIImage
     
-    init(type: CellType, label: String, comment: String, image: [String], postAuthor: [String]) {
+    init(type: CellType, label: String, comment: String, image: [String], postAuthor: UIImage) {
         
         self.type = type
         self.label = label

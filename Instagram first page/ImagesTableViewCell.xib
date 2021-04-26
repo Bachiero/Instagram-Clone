@@ -20,11 +20,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8qR-nb-4JQ">
-                        <rect key="frame" x="5" y="50" width="577" height="300"/>
+                        <rect key="frame" x="5" y="50" width="577" height="320"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="577" id="QHs-qL-UZI"/>
-                            <constraint firstAttribute="height" constant="300" id="bqf-KE-xVx"/>
+                            <constraint firstAttribute="height" constant="320" id="bqf-KE-xVx"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MpC-Pp-5pb">
                             <size key="itemSize" width="128" height="128"/>
@@ -50,13 +50,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ads-Wc-rEr">
-                        <rect key="frame" x="5" y="385" width="41.5" height="20.5"/>
+                        <rect key="frame" x="5" y="405" width="41.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZY-U7-bUg">
-                        <rect key="frame" x="12" y="355" width="25" height="25"/>
+                        <rect key="frame" x="12" y="375" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="01X-mF-jAd"/>
                             <constraint firstAttribute="height" constant="25" id="WzM-5U-LgT"/>
@@ -65,7 +65,7 @@
                         <state key="normal" image="heart" catalog="system"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noc-7m-Hzc">
-                        <rect key="frame" x="42" y="355" width="25" height="25"/>
+                        <rect key="frame" x="42" y="375" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="YSt-Gg-w0f"/>
                             <constraint firstAttribute="height" constant="25" id="qPf-wp-peG"/>
@@ -74,7 +74,7 @@
                         <state key="normal" image="message" catalog="system"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWZ-fy-h0K">
-                        <rect key="frame" x="72" y="355" width="25" height="25"/>
+                        <rect key="frame" x="72" y="375" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="KuF-TI-yf5"/>
                             <constraint firstAttribute="width" constant="25" id="YfG-80-e1K"/>
@@ -83,7 +83,7 @@
                         <state key="normal" image="paperplane" catalog="system"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWM-p8-G5N">
-                        <rect key="frame" x="567" y="358" width="25" height="25"/>
+                        <rect key="frame" x="567" y="378" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="5KY-JT-rHo"/>
                             <constraint firstAttribute="width" constant="25" id="nqH-XA-gko"/>

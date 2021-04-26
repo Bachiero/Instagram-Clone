@@ -17,7 +17,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     
     private var model: [String]?
-    private var authorImage: [String]?
+   
 
   
     
@@ -25,7 +25,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         super.awakeFromNib()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 350 , height: 350)
+        layout.itemSize = CGSize(width: 360 , height: 320)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
@@ -34,8 +34,12 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
+        postAuthor.layer.borderWidth = 1.0
+        postAuthor.layer.masksToBounds = false
+        postAuthor.layer.borderColor = UIColor.systemPink.cgColor
+        postAuthor.layer.cornerRadius = 20
+        postAuthor.clipsToBounds = true
         
-
         
     }
     
@@ -44,7 +48,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         self.model = model.image
         self.myLabel.text = model.comment
         self.author.text = model.label
-        self.authorImage = model.postAuthor
+        self.postAuthor.image = model.postAuthor
         
     
     }

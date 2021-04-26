@@ -30,10 +30,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        arrayOfCellData = [ CellData(type: .story, label: "Pablo_Escobar", comment: "Liked by .... ",image: firstVar, postAuthor: postAuthor1),
-                            CellData(type: .post, label: "Maseratti_lover", comment: "Great look",image: secondVar, postAuthor: postAuthor2),
-                            CellData(type: .post, label: "Ray99", comment: "random comment",image: thirdVar, postAuthor: postAuthor3),
-                            CellData(type: .post , label: "Adriana_95", comment: "yes, yes",image: otherVar, postAuthor: postAuthor3)]
+        arrayOfCellData = [ CellData(type: .story, label: "Pablo_Escobar", comment: "Liked by .... ",image: firstVar, postAuthor: #imageLiteral(resourceName: "car3")),
+                            CellData(type: .post, label: "Maseratti_lover", comment: "Great look",image: secondVar, postAuthor: #imageLiteral(resourceName: "car1")),
+                            CellData(type: .post, label: "Ray99", comment: "random comment",image: thirdVar, postAuthor: #imageLiteral(resourceName: "cat2")),
+                            CellData(type: .post , label: "Adriana_95", comment: "yes, yes",image: otherVar, postAuthor: #imageLiteral(resourceName: "car3"))]
                            
         
         tableView.delegate = self
