@@ -15,11 +15,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var postAuthor: UIImageView!
     
-    
     private var model: [String]?
-   
-
-  
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,8 +35,6 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         postAuthor.layer.borderColor = UIColor.systemPink.cgColor
         postAuthor.layer.cornerRadius = 20
         postAuthor.clipsToBounds = true
-        
-        
     }
     
     func configure(with model: CellData) {
@@ -49,18 +43,11 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         self.myLabel.text = model.comment
         self.author.text = model.label
         self.postAuthor.image = model.postAuthor
-        
-    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
- 
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model?.count ?? 0
@@ -70,9 +57,5 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RectCollectionViewCell.identifier, for: indexPath) as! RectCollectionViewCell
         cell.configure(with: model[indexPath.row])
         return cell
-        
     }
-    
-
-
 }

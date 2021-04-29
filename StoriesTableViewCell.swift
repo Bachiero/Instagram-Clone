@@ -9,6 +9,7 @@ import UIKit
 
 class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var collectionView:  UICollectionView!
     private var model: [String]?
 
     override func awakeFromNib() {
@@ -20,6 +21,7 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
         collectionView.register(CircleCollectionViewCell.self, forCellWithReuseIdentifier: CircleCollectionViewCell.identifier)
+        collectionView.register(FirstCollectionViewCell.self, forCellWithReuseIdentifier: FirstCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -29,32 +31,35 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     
     func configure(with model: [String]) {
     
-            self.model = model
+        self.model = model
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
-    
-    @IBOutlet weak var collectionView:  UICollectionView!
-    
-    
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let model = model else { return UICollectionViewCell() }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CircleCollectionViewCell.identifier, for: indexPath) as! CircleCollectionViewCell
-        cell.configure(with: model[indexPath.row])
-        return cell
+ 
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstCollectionViewCell.identifier, for: indexPath) as! FirstCollectionViewCell
+            cell.configure(with: model[indexPath.row])
+            return cell
+        }
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CircleCollectionViewCell.identifier, for: indexPath) as! CircleCollectionViewCell
+            cell.configure(with: model[indexPath.row])
+            return cell
+        }
+        }
         
+
     }
 
-}
 
 
 

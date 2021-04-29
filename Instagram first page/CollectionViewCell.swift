@@ -7,12 +7,11 @@
 
 import UIKit
 
+
 class CircleCollectionViewCell: UICollectionViewCell {
 
-    
     static let identifier = "CircleCollectionViewCell"
-    
-   
+
     private var myImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -22,35 +21,85 @@ class CircleCollectionViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 50
         imageView.backgroundColor = .white
         imageView.layer.borderWidth = 2
-        imageView.layer.borderColor = UIColor.link.cgColor
+        imageView.layer.borderColor = UIColor.systemPink.cgColor
         return imageView
     }()
+
     
-    static func nib() -> UINib {
-        
-        return UINib(nibName: "CircleCollectionViewCell", bundle: nil )
-    }
-    
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        contentView.addSubview(myImageView)
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        myImageView.frame = contentView.bounds
-    }
     
     public func configure(with name: String) {
         myImageView.image = UIImage(named: name)
+       
+    }
+    
+    static func nib() -> UINib {
 
+        return UINib(nibName: "CircleCollectionViewCell", bundle: nil )
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        myImageView.frame = contentView.bounds
+        
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        contentView.addSubview(myImageView)
+
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+}
+
+class FirstCollectionViewCell: UICollectionViewCell {
+
+    static let identifier = "FirstCollectionViewCell"
+
+    private var myImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        imageView.layer.cornerRadius = 50
+        imageView.backgroundColor = .white
+        imageView.layer.borderWidth = 3
+        imageView.layer.borderColor = UIColor.white.cgColor
+        return imageView
+    }()
+
+    
+    
+    public func configure(with name: String) {
+        myImageView.image = UIImage(named: name)
+       
+    }
+    
+    static func nib() -> UINib {
+
+        return UINib(nibName: "FirstCollectionViewCell", bundle: nil )
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        myImageView.frame = contentView.bounds
+        
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        contentView.addSubview(myImageView)
+
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
 }
@@ -58,46 +107,29 @@ class CircleCollectionViewCell: UICollectionViewCell {
 
 class RectCollectionViewCell : UICollectionViewCell {
     
-
-    
     static let identifier = "RectCollectionViewCell"
-    
-    
-    
     private var myImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         imageView.frame = CGRect(x: 0, y: 0, width: 350, height: 350)
-//        imageView.layer.cornerRadius = imageView.layer.frame.height/2
-//        imageView.backgroundColor = .blue
         imageView.layer.borderWidth = 2
-//        imageView.layer.borderColor = UIColor.link.cgColor
-        
-        
         return imageView
     }()
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    
     
     static func nib() -> UINib {
         
         return UINib(nibName: "RectCollectionViewCell", bundle: nil )
     }
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         contentView.addSubview(myImageView)
-
     }
     
     required init?(coder: NSCoder) {
@@ -112,8 +144,5 @@ class RectCollectionViewCell : UICollectionViewCell {
     public func configure(with name: String) {
 
         myImageView.image = UIImage(named: name)
-        
-       
     }
-
 }

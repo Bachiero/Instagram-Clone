@@ -5,52 +5,22 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RectCollectionViewCell" id="gTV-IL-0wX" customClass="RectCollectionViewCell" customModule="Instagram_first_page" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="gTV-IL-0wX" customClass="CircleCollectionViewCell" customModule="Instagram_first_page" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="567" height="458"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="567" height="458"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrs-gu-pIF">
-                        <rect key="frame" x="0.0" y="427" width="567" height="31"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="31" id="PdK-Kd-SL9"/>
-                        </constraints>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
-                        <color key="textColor" systemColor="labelColor"/>
-                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="mrs-gu-pIF" secondAttribute="bottom" id="QUU-Kd-PUi"/>
-                <constraint firstItem="mrs-gu-pIF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tog-t9-Ids"/>
-                <constraint firstItem="mrs-gu-pIF" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="oBM-OA-Met"/>
-            </constraints>
             <size key="customSize" width="567" height="458"/>
-            <connections>
-                <outlet property="myLabel" destination="mrs-gu-pIF" id="jiq-2L-tg3"/>
-            </connections>
             <point key="canvasLocation" x="223.91304347826087" y="127.90178571428571"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

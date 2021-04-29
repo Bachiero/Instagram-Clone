@@ -22,15 +22,32 @@ struct CellData {
         self.comment = comment
         self.image = image
         self.postAuthor = postAuthor
-        
     }
-    
 }
-
 
 enum CellType {
     
     case story
     case post
-    
 }
+
+
+
+struct StoryData {
+    let cell: String
+    let type: StoryType
+    
+    init(cell: String, type: StoryType) {
+        
+        self.cell = cell
+        self.type = type
+    }
+}
+
+enum StoryType {
+    
+    case myStory
+    case otherStory
+}
+
+var pictures: [StoryType: String] = [.myStory:"car1",.otherStory:"car2",.otherStory:"car3"]
