@@ -14,6 +14,7 @@
 		2032FC2E261C976800CAE77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2032FC2D261C976800CAE77E /* Assets.xcassets */; };
 		2032FC31261C976800CAE77E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032FC2F261C976800CAE77E /* LaunchScreen.storyboard */; };
 		20371F232631DB650061F777 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20371F222631DB650061F777 /* CellData.swift */; };
+		2039B8B7263C759300F57CF4 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2039B8B6263C759200F57CF4 /* Animations.swift */; };
 		204EAECA261F32140067F5A5 /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204EAEC8261F32140067F5A5 /* StoriesTableViewCell.swift */; };
 		204EAECB261F32140067F5A5 /* StoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 204EAEC9261F32140067F5A5 /* StoriesTableViewCell.xib */; };
 		204EAECF262437E40067F5A5 /* ImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204EAECD262437E40067F5A5 /* ImagesTableViewCell.swift */; };
@@ -32,6 +33,7 @@
 		2032FC30261C976800CAE77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2032FC32261C976800CAE77E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20371F222631DB650061F777 /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
+		2039B8B6263C759200F57CF4 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		204EAEC8261F32140067F5A5 /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		204EAEC9261F32140067F5A5 /* StoriesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		204EAECD262437E40067F5A5 /* ImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				2032FC32261C976800CAE77E /* Info.plist */,
 				204EAED4262F8BC50067F5A5 /* CollectionViewCell.swift */,
 				204EAED5262F8BC50067F5A5 /* CollectionViewCell.xib */,
+				2039B8B6263C759200F57CF4 /* Animations.swift */,
 			);
 			path = "Instagram first page";
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				204EAED6262F8BC50067F5A5 /* CollectionViewCell.swift in Sources */,
 				20371F232631DB650061F777 /* CellData.swift in Sources */,
 				204EAECF262437E40067F5A5 /* ImagesTableViewCell.swift in Sources */,
+				2039B8B7263C759300F57CF4 /* Animations.swift in Sources */,
 				2032FC27261C976700CAE77E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

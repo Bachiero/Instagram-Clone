@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="617" height="603"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8qR-nb-4JQ">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8qR-nb-4JQ">
                         <rect key="frame" x="5" y="50" width="577" height="320"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -57,12 +57,16 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZY-U7-bUg">
                         <rect key="frame" x="12" y="375" width="25" height="25"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" button="YES" selected="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="01X-mF-jAd"/>
                             <constraint firstAttribute="height" constant="25" id="WzM-5U-LgT"/>
                         </constraints>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <state key="normal" image="heart" catalog="system"/>
+                        <state key="selected" image="heart.fill" catalog="system"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noc-7m-Hzc">
                         <rect key="frame" x="42" y="375" width="25" height="25"/>
@@ -104,12 +108,21 @@
                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="W9N-Nt-0m3">
+                        <rect key="frame" x="140" y="160" width="0.0" height="2.5"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" id="bwq-1M-7K3"/>
+                            <constraint firstAttribute="width" secondItem="W9N-Nt-0m3" secondAttribute="height" id="eoL-q7-469"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="XZY-U7-bUg" firstAttribute="top" secondItem="8qR-nb-4JQ" secondAttribute="bottom" constant="5" id="3Sc-7l-KxH"/>
                     <constraint firstItem="noc-7m-Hzc" firstAttribute="top" secondItem="8qR-nb-4JQ" secondAttribute="bottom" constant="5" id="5Vo-MO-XAV"/>
                     <constraint firstItem="7sd-86-3uT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="74Y-QR-I6d"/>
                     <constraint firstItem="noc-7m-Hzc" firstAttribute="leading" secondItem="XZY-U7-bUg" secondAttribute="trailing" constant="5" id="Ezk-JJ-YfW"/>
+                    <constraint firstItem="W9N-Nt-0m3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="150" id="Inj-7w-0Ec"/>
                     <constraint firstItem="TT5-3R-8Mg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="J71-it-wB5"/>
                     <constraint firstItem="YWZ-fy-h0K" firstAttribute="top" secondItem="8qR-nb-4JQ" secondAttribute="bottom" constant="5" id="McO-2A-XrU"/>
                     <constraint firstItem="ads-Wc-rEr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="RNK-Bf-gjG"/>
@@ -124,12 +137,15 @@
                     <constraint firstItem="TT5-3R-8Mg" firstAttribute="leading" secondItem="7sd-86-3uT" secondAttribute="trailing" constant="5" id="u8H-QT-Me9"/>
                     <constraint firstItem="JWM-p8-G5N" firstAttribute="top" secondItem="8qR-nb-4JQ" secondAttribute="bottom" constant="8" symbolic="YES" id="wzb-6K-Ldt"/>
                     <constraint firstItem="YWZ-fy-h0K" firstAttribute="leading" secondItem="noc-7m-Hzc" secondAttribute="trailing" constant="5" id="yc1-1B-LfL"/>
+                    <constraint firstItem="W9N-Nt-0m3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="120" id="z4M-Xc-h8E"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="author" destination="TT5-3R-8Mg" id="bnH-L6-gXA"/>
                 <outlet property="collectionView" destination="8qR-nb-4JQ" id="paD-Rk-Azg"/>
+                <outlet property="likeButton" destination="XZY-U7-bUg" id="VEW-Aj-Gai"/>
+                <outlet property="likeImageViewWidthConstraint" destination="bwq-1M-7K3" id="F8G-xB-i3n"/>
                 <outlet property="myLabel" destination="ads-Wc-rEr" id="o57-CN-XVp"/>
                 <outlet property="postAuthor" destination="7sd-86-3uT" id="bdP-qY-r9m"/>
             </connections>
@@ -139,8 +155,12 @@
     <resources>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

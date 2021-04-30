@@ -11,21 +11,20 @@ import UIKit
 class CircleCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "CircleCollectionViewCell"
-
+    
     private var myImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        imageView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        imageView.layer.cornerRadius = 50
+        imageView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
+        imageView.layer.cornerRadius = 42.5
         imageView.backgroundColor = .white
         imageView.layer.borderWidth = 2
         imageView.layer.borderColor = UIColor.systemPink.cgColor
+        
         return imageView
     }()
-
-    
     
     public func configure(with name: String) {
         myImageView.image = UIImage(named: name)
@@ -65,16 +64,16 @@ class FirstCollectionViewCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        imageView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        imageView.layer.cornerRadius = 50
+        imageView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
+        imageView.layer.cornerRadius = 42.5
         imageView.backgroundColor = .white
         imageView.layer.borderWidth = 3
         imageView.layer.borderColor = UIColor.white.cgColor
+        
+        
         return imageView
     }()
 
-    
-    
     public func configure(with name: String) {
         myImageView.image = UIImage(named: name)
        
@@ -103,7 +102,6 @@ class FirstCollectionViewCell: UICollectionViewCell {
     }
 
 }
-
 
 class RectCollectionViewCell : UICollectionViewCell {
     

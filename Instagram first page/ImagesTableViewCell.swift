@@ -14,6 +14,8 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var postAuthor: UIImageView!
+    @IBOutlet weak var likeImageViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var likeButton: UIButton!
     
     private var model: [String]?
     
@@ -35,6 +37,9 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         postAuthor.layer.borderColor = UIColor.systemPink.cgColor
         postAuthor.layer.cornerRadius = 20
         postAuthor.clipsToBounds = true
+        
+        collectionView.addGestureRecognizer(doubleTapRecognizer)
+        likeButton.addGestureRecognizer(singleTapRecognizer)
     }
     
     func configure(with model: CellData) {
@@ -57,5 +62,31 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RectCollectionViewCell.identifier, for: indexPath) as! RectCollectionViewCell
         cell.configure(with: model[indexPath.row])
         return cell
+    }
+    
+    
+    
+    // implementation of animations on doubleTap
+    lazy var likeAnimator = LikaAnimator(container: contentView, layoutConstraint: likeImageViewWidthConstraint)
+    lazy var doubleTapRecognizer: UITapGestureRecognizer = {
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        tapRecognizer.numberOfTapsRequired = 2
+        return tapRecognizer
+    }()
+    lazy var singleTapRecognizer: UITapGestureRecognizer = {
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        tapRecognizer.numberOfTapsRequired = 1
+        return tapRecognizer
+    }()
+    
+    @objc
+    func didTap() {
+        likeAnimator.animate { [weak self] in
+            self?.likeButton.tintColor = UIColor.systemPink
+            self?.likeButton.isSelected = true
+        
+        }
     }
 }
