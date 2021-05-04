@@ -50,8 +50,8 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ads-Wc-rEr">
-                        <rect key="frame" x="5" y="405" width="41.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="10" y="405" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -87,7 +87,7 @@
                         <state key="normal" image="paperplane" catalog="system"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWM-p8-G5N">
-                        <rect key="frame" x="567" y="378" width="25" height="25"/>
+                        <rect key="frame" x="572" y="378" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="5KY-JT-rHo"/>
                             <constraint firstAttribute="width" constant="25" id="nqH-XA-gko"/>
@@ -125,10 +125,10 @@
                     <constraint firstItem="W9N-Nt-0m3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="150" id="Inj-7w-0Ec"/>
                     <constraint firstItem="TT5-3R-8Mg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="J71-it-wB5"/>
                     <constraint firstItem="YWZ-fy-h0K" firstAttribute="top" secondItem="8qR-nb-4JQ" secondAttribute="bottom" constant="5" id="McO-2A-XrU"/>
-                    <constraint firstItem="ads-Wc-rEr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="RNK-Bf-gjG"/>
+                    <constraint firstItem="ads-Wc-rEr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="RNK-Bf-gjG"/>
                     <constraint firstItem="8qR-nb-4JQ" firstAttribute="top" secondItem="7sd-86-3uT" secondAttribute="bottom" constant="5" id="Yfo-nW-MVx"/>
                     <constraint firstAttribute="trailing" secondItem="zl6-Fl-qJV" secondAttribute="trailing" constant="20" id="h2T-hr-rwr"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="JWM-p8-G5N" secondAttribute="trailing" constant="5" id="h8M-B4-RO1"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="JWM-p8-G5N" secondAttribute="trailing" id="h8M-B4-RO1"/>
                     <constraint firstItem="8qR-nb-4JQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="hdF-zP-tcI"/>
                     <constraint firstItem="XZY-U7-bUg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="lVF-at-kJr"/>
                     <constraint firstItem="8qR-nb-4JQ" firstAttribute="top" secondItem="zl6-Fl-qJV" secondAttribute="bottom" constant="7" id="mX3-1N-7i7"/>

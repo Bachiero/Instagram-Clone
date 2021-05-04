@@ -22,13 +22,17 @@ class CircleCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .white
         imageView.layer.borderWidth = 2
         imageView.layer.borderColor = UIColor.systemPink.cgColor
-        
         return imageView
     }()
     
     public func configure(with name: String) {
         myImageView.image = UIImage(named: name)
-       
+        
+    }
+    
+    public func configureAuthor(with name: String){
+        
+        titleLabel.text = name
     }
     
     static func nib() -> UINib {
@@ -42,11 +46,17 @@ class CircleCollectionViewCell: UICollectionViewCell {
         
     }
 
+    let titleLabel = UILabel(frame: CGRect(x: 0, y: 78, width: 80, height: 30))
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
+        titleLabel.text = "userName"
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = UIFont(name:"chalkboard SE", size: 14)
+        titleLabel.textAlignment = NSTextAlignment.center
+        contentView.addSubview(titleLabel)
         contentView.addSubview(myImageView)
-
     }
 
     required init?(coder: NSCoder) {
@@ -70,7 +80,6 @@ class FirstCollectionViewCell: UICollectionViewCell {
         imageView.layer.borderWidth = 3
         imageView.layer.borderColor = UIColor.white.cgColor
         
-        
         return imageView
     }()
 
@@ -93,6 +102,12 @@ class FirstCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 78, width: myImageView.frame.width - 10, height: 30))
+        titleLabel.text = "Your Story"
+        titleLabel.textColor = UIColor.black
+        titleLabel.font = UIFont(name:"chalkboard SE", size: 14)
+        titleLabel.textAlignment = NSTextAlignment.center
+        contentView.addSubview(titleLabel)
         contentView.addSubview(myImageView)
 
     }

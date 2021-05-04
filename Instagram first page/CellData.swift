@@ -50,4 +50,14 @@ enum StoryType {
     case otherStory
 }
 
-var pictures: [StoryType: String] = [.myStory:"car1",.otherStory:"car2",.otherStory:"car3"]
+struct StoryAuthor {
+    
+    let image: [String]
+    let name: String
+    
+    init(image: [String], name: String){
+        
+        self.image = image
+        self.name = name
+    }
+}

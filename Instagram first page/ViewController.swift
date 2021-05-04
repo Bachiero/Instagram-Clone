@@ -21,15 +21,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         
-        arrayOfCellData = [ CellData(type: .story, label: "Enzo_Ferrari", comment: "Liked by .... ",image: otherVar, postAuthor: #imageLiteral(resourceName: "car3")),
-                            CellData(type: .post, label: "Bob_bob", comment: "Great look",image: firstVar, postAuthor: #imageLiteral(resourceName: "car1")),
-                            CellData(type: .post, label: "Ray99", comment: "random comment",image: secondVar, postAuthor: #imageLiteral(resourceName: "cat2")),
-                            CellData(type: .post , label: "Adriana_95", comment: "see you later..",image: thirdVar, postAuthor: #imageLiteral(resourceName: "car3"))]
+        arrayOfCellData = [ CellData(type: .story, label: "Enzo_Ferrari", comment: "26 Likes",image: otherVar, postAuthor: #imageLiteral(resourceName: "car3")),
+                            CellData(type: .post, label: "Bob_bob", comment: "93 Likes",image: firstVar, postAuthor: #imageLiteral(resourceName: "car1")),
+                            CellData(type: .post, label: "Ray99", comment: "68 Likes",image: secondVar, postAuthor: #imageLiteral(resourceName: "cat2")),
+                            CellData(type: .post , label: "Adriana_95", comment: "39 Likes",image: thirdVar, postAuthor: #imageLiteral(resourceName: "panda1"))]
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView?.register(UINib(nibName: "StoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "StoriesTableViewCell")
         tableView?.register(UINib(nibName: "ImagesTableViewCell", bundle: nil), forCellReuseIdentifier: "ImagesTableViewCell")
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -11,14 +11,14 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var collectionView:  UICollectionView!
     private var model: [String]?
-
+    private let storyAuthor: [String] = ["Bobby", "Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey"]
   
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 85 , height: 85)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: -15, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
         collectionView.register(CircleCollectionViewCell.self, forCellWithReuseIdentifier: CircleCollectionViewCell.identifier)
@@ -54,6 +54,7 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CircleCollectionViewCell.identifier, for: indexPath) as! CircleCollectionViewCell
             cell.configure(with: model[indexPath.row])
+            cell.configureAuthor(with: storyAuthor[indexPath.row])
             return cell
         }
     }

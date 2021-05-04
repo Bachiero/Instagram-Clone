@@ -79,13 +79,13 @@
 				2032FC24261C976700CAE77E /* AppDelegate.swift */,
 				2032FC26261C976700CAE77E /* SceneDelegate.swift */,
 				2032FC28261C976700CAE77E /* ViewController.swift */,
-				20371F222631DB650061F777 /* CellData.swift */,
 				2032FC2A261C976700CAE77E /* Main.storyboard */,
 				2032FC2D261C976800CAE77E /* Assets.xcassets */,
 				2032FC2F261C976800CAE77E /* LaunchScreen.storyboard */,
 				2032FC32261C976800CAE77E /* Info.plist */,
 				204EAED4262F8BC50067F5A5 /* CollectionViewCell.swift */,
 				204EAED5262F8BC50067F5A5 /* CollectionViewCell.xib */,
+				20371F222631DB650061F777 /* CellData.swift */,
 				2039B8B6263C759200F57CF4 /* Animations.swift */,
 			);
 			path = "Instagram first page";

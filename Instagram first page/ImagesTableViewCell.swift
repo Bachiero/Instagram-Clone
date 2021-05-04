@@ -66,6 +66,8 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     
     
+    
+    
     // implementation of animations on doubleTap
     lazy var likeAnimator = LikaAnimator(container: contentView, layoutConstraint: likeImageViewWidthConstraint)
     lazy var doubleTapRecognizer: UITapGestureRecognizer = {
