@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var arrayOfCellData = [CellData]()
     private var firstVar = ["car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3"]
-    private var secondVar = ["panda1", "panda2", "panda3","panda1", "panda2", "panda3","panda1", "panda2", "panda3","panda1", "panda2", "panda3"]
+    private var secondVar = ["panda1", "panda2", "panda3","panda1", "panda2"]
     private var thirdVar = ["cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3"]
     var otherVar = ["car1", "cat1", "panda1","car1", "cat1", "panda1","car1", "cat1", "panda1"]
 
@@ -61,7 +61,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case .story:
             return 120
         case .post:
-            return 450
+            return 480
+            
         }
     }
 }

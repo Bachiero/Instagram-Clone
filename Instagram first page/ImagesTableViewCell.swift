@@ -16,6 +16,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     @IBOutlet weak var postAuthor: UIImageView!
     @IBOutlet weak var likeImageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     private var model: [String]?
     
@@ -23,8 +24,10 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         super.awakeFromNib()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 360 , height: 320)
+        layout.itemSize = CGSize(width: 360 , height: 400)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
         collectionView.register(RectCollectionViewCell.self, forCellWithReuseIdentifier: RectCollectionViewCell.identifier)
@@ -32,15 +35,18 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
-        postAuthor.layer.borderWidth = 1.0
+        postAuthor.layer.borderWidth = 0
         postAuthor.layer.masksToBounds = false
-        postAuthor.layer.borderColor = UIColor.systemPink.cgColor
-        postAuthor.layer.cornerRadius = 20
+        postAuthor.layer.cornerRadius = 17.5
         postAuthor.clipsToBounds = true
         
         collectionView.addGestureRecognizer(doubleTapRecognizer)
         likeButton.addGestureRecognizer(singleTapRecognizer)
+        
+        pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
+    
     
     func configure(with model: CellData) {
 
@@ -55,6 +61,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        pageControl.numberOfPages = model?.count ?? 0
         return model?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -63,7 +70,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         cell.configure(with: model[indexPath.row])
         return cell
     }
-    
+
     
     
     
@@ -76,6 +83,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         tapRecognizer.numberOfTapsRequired = 2
         return tapRecognizer
     }()
+    // implementation of animations on singleTap
     lazy var singleTapRecognizer: UITapGestureRecognizer = {
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))

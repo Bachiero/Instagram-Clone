@@ -20,7 +20,7 @@ class CircleCollectionViewCell: UICollectionViewCell {
         imageView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
         imageView.layer.cornerRadius = 42.5
         imageView.backgroundColor = .white
-        imageView.layer.borderWidth = 2
+        imageView.layer.borderWidth = 1.5
         imageView.layer.borderColor = UIColor.systemPink.cgColor
         return imageView
     }()
@@ -68,7 +68,7 @@ class CircleCollectionViewCell: UICollectionViewCell {
 class FirstCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "FirstCollectionViewCell"
-
+    
     private var myImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -77,7 +77,7 @@ class FirstCollectionViewCell: UICollectionViewCell {
         imageView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
         imageView.layer.cornerRadius = 42.5
         imageView.backgroundColor = .white
-        imageView.layer.borderWidth = 3
+        imageView.layer.borderWidth = 2
         imageView.layer.borderColor = UIColor.white.cgColor
         
         return imageView
@@ -109,14 +109,13 @@ class FirstCollectionViewCell: UICollectionViewCell {
         titleLabel.textAlignment = NSTextAlignment.center
         contentView.addSubview(titleLabel)
         contentView.addSubview(myImageView)
-
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
+
 
 class RectCollectionViewCell : UICollectionViewCell {
     
@@ -126,8 +125,8 @@ class RectCollectionViewCell : UICollectionViewCell {
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        imageView.frame = CGRect(x: 0, y: 0, width: 350, height: 350)
-        imageView.layer.borderWidth = 2
+        imageView.frame = CGRect(x: 0, y: 0, width: 360, height: 400)
+        imageView.layer.borderWidth = 0
         return imageView
     }()
     
