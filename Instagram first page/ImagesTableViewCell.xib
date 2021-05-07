@@ -21,10 +21,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8qR-nb-4JQ">
-                        <rect key="frame" x="0.0" y="45" width="360" height="360"/>
+                        <rect key="frame" x="0.0" y="45" width="617" height="360"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="360" id="QHs-qL-UZI"/>
                             <constraint firstAttribute="height" constant="360" id="bqf-KE-xVx"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="7yQ-57-L0L">
@@ -145,6 +144,7 @@
                     <constraint firstItem="8qR-nb-4JQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hdF-zP-tcI"/>
                     <constraint firstItem="XZY-U7-bUg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="lVF-at-kJr"/>
                     <constraint firstItem="8qR-nb-4JQ" firstAttribute="top" secondItem="zl6-Fl-qJV" secondAttribute="bottom" constant="10" id="mX3-1N-7i7"/>
+                    <constraint firstAttribute="trailing" secondItem="8qR-nb-4JQ" secondAttribute="trailing" id="nXa-b8-8dg"/>
                     <constraint firstItem="7sd-86-3uT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="rVY-el-V7b"/>
                     <constraint firstItem="ads-Wc-rEr" firstAttribute="top" secondItem="XZY-U7-bUg" secondAttribute="bottom" constant="5" id="taK-Dd-8Vk"/>
                     <constraint firstItem="uBM-67-GQl" firstAttribute="top" secondItem="8qR-nb-4JQ" secondAttribute="bottom" constant="10" id="tam-U1-9hX"/>

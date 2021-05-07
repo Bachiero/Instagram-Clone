@@ -31,7 +31,6 @@ class CircleCollectionViewCell: UICollectionViewCell {
     }
     
     public func configureAuthor(with name: String){
-        
         titleLabel.text = name
     }
     
@@ -96,7 +95,6 @@ class FirstCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         myImageView.frame = contentView.bounds
-        
     }
 
     override init(frame: CGRect) {

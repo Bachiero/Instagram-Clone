@@ -24,7 +24,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         super.awakeFromNib()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 360 , height: 400)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width , height: 400)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
@@ -39,7 +39,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         postAuthor.layer.masksToBounds = false
         postAuthor.layer.cornerRadius = 17.5
         postAuthor.clipsToBounds = true
-        
+        self.selectionStyle = .none
         collectionView.addGestureRecognizer(doubleTapRecognizer)
         likeButton.addGestureRecognizer(singleTapRecognizer)
         
@@ -71,9 +71,6 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         return cell
     }
 
-    
-    
-    
     
     // implementation of animations on doubleTap
     lazy var likeAnimator = LikaAnimator(container: contentView, layoutConstraint: likeImageViewWidthConstraint)
