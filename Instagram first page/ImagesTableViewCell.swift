@@ -62,6 +62,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pageControl.numberOfPages = model?.count ?? 0
+        pageControl.isHidden = !( pageControl.numberOfPages > 1)
         return model?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,6 +72,15 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         return cell
     }
 
+    // PageControl dots animation
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+    
     
     // implementation of animations on doubleTap
     lazy var likeAnimator = LikaAnimator(container: contentView, layoutConstraint: likeImageViewWidthConstraint)
