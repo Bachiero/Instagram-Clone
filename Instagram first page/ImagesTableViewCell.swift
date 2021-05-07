@@ -100,10 +100,21 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     @objc
     func didTap() {
+       
+        let isLiked = self.likeButton.isSelected
+        if isLiked == false {
         likeAnimator.animate { [weak self] in
             self?.likeButton.tintColor = UIColor.systemPink
             self?.likeButton.isSelected = true
+        }
+        }
+            else {
         
+                likeAnimator.animate { [weak self] in
+                    self?.likeButton.tintColor = UIColor.black
+                    self?.likeButton.isSelected = false
+            }
+            }
         }
     }
-}
+
