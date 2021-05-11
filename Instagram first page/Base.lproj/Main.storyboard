@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="-1658" y="-325"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagram_first_page" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Instagram_first_page" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="v8i-La-bPQ">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="Screenshot 2021-04-24 at 15.40.32" style="plain" id="PNQ-gb-Var">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="PNQ-gb-Var">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RfD-CM-zzk">
                                 <rect key="frame" x="20" y="0.0" width="168" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,15 +131,80 @@
         <scene sceneID="bd7-wc-hTX">
             <objects>
                 <navigationController id="PaK-BD-KRJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="o8H-Hy-P2P"/>
+                    <tabBarItem key="tabBarItem" title="" image="person.circle" catalog="system" id="o8H-Hy-P2P"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="F7y-uz-pyU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="9NX-Wu-wMH" kind="relationship" relationship="rootViewController" id="msb-Eq-szn"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooJ-q2-4oj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1104" y="-325"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="w03-Ef-aq9">
+            <objects>
+                <viewController id="9NX-Wu-wMH" customClass="ProfileViewController" customModule="Instagram_first_page" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3PP-CF-7xS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kpP-be-C3M">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Uev-j7-Xbo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kpP-be-C3M" firstAttribute="top" secondItem="Uev-j7-Xbo" secondAttribute="top" id="4lb-6x-Vye"/>
+                            <constraint firstItem="Uev-j7-Xbo" firstAttribute="trailing" secondItem="kpP-be-C3M" secondAttribute="trailing" id="W4P-bd-rOi"/>
+                            <constraint firstItem="Uev-j7-Xbo" firstAttribute="bottom" secondItem="kpP-be-C3M" secondAttribute="bottom" id="YhU-3W-Wk1"/>
+                            <constraint firstItem="kpP-be-C3M" firstAttribute="leading" secondItem="Uev-j7-Xbo" secondAttribute="leading" id="uV5-Ef-hme"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jSc-Pk-zVj">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="5im-a8-wrH">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" id="o77-ag-gRP">
+                                <rect key="frame" x="20" y="2.5" width="125" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="27"/>
+                                <state key="normal" title="profile name is">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" style="plain" id="YSC-jK-JSi" userLabel="Menu">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L24-O9-S9e">
+                                    <rect key="frame" x="373" y="11" width="21" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="line.horizontal.3" catalog="system"/>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="gYb-8U-rzB" userLabel="Plus">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QUZ-oV-6Es">
+                                    <rect key="frame" x="344" y="11" width="21" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="plus.app" catalog="system"/>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ProfileName" destination="o77-ag-gRP" id="y7T-Iv-Y74"/>
+                        <outlet property="tableView" destination="kpP-be-C3M" id="N8o-Eb-F66"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j2e-mp-vQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102.8985507246377" y="414.50892857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ixL-w1-e9g">
@@ -185,13 +250,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Screenshot 2021-04-24 at 15.40.32" width="308" height="102"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">

@@ -11,7 +11,7 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var collectionView:  UICollectionView!
     private var model: [String]?
-    private let storyAuthor: [String] = ["Bobby", "Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey"]
+    private let storyAuthorName: [String] = ["Bobby", "Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey"]
   
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,13 +26,13 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .white        
+        collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
     }
     
+    func configure(with model: StoryData) {
     
-    func configure(with model: [String]) {
-    
-        self.model = model
+        self.model = model.image
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,22 +46,19 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let model = model else { return UICollectionViewCell() }
  
-        if indexPath.row == 0 {
+        let type = storyAuthorImages[indexPath.row].type
+        switch type {
+        case .myStory:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstCollectionViewCell.identifier, for: indexPath) as! FirstCollectionViewCell
             cell.configure(with: model[indexPath.row])
             return cell
-        }
-        else {
+        case .otherStory:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CircleCollectionViewCell.identifier, for: indexPath) as! CircleCollectionViewCell
             cell.configure(with: model[indexPath.row])
-            cell.configureAuthor(with: storyAuthor[indexPath.row])
+            cell.configureAuthor(with: storyAuthorName[indexPath.row])
             return cell
+            
         }
     }
-        
 
 }
-
-
-
-

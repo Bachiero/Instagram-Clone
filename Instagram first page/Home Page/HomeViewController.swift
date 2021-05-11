@@ -7,15 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
     var arrayOfCellData = [CellData]()
-    private var firstVar = ["car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3"]
+    private var firstVar = ["car1", "car2", "car3","car1", "car2"]
     private var secondVar = ["panda1", "panda2", "panda3","panda1", "panda2"]
-    private var thirdVar = ["cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3"]
-    var otherVar = ["car1", "cat1", "panda1","car1", "cat1", "panda1","car1", "cat1", "panda1"]
+    private var thirdVar = ["cat1", "cat2", "cat3","cat1", "cat2"]
+    private var otherVar = ["car1", "cat1", "panda1","car1", "cat1"]
+    
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                             CellData(type: .post, label: "Bob_bob", comment: "93 Likes",image: firstVar, postAuthor: #imageLiteral(resourceName: "car1")),
                             CellData(type: .post, label: "Ray99", comment: "68 Likes",image: secondVar, postAuthor: #imageLiteral(resourceName: "cat2")),
                             CellData(type: .post , label: "Adriana_95", comment: "39 Likes",image: thirdVar, postAuthor: #imageLiteral(resourceName: "panda1"))]
+        
+        storyAuthorImages = [StoryData(image: otherVar, type: .myStory),
+                             StoryData(image: firstVar, type: .otherStory),
+                             StoryData(image: thirdVar, type: .otherStory),
+                             StoryData(image: otherVar, type: .otherStory),
+                             StoryData(image: firstVar, type: .otherStory),
+                             StoryData(image: thirdVar, type: .otherStory),
+                             StoryData(image: otherVar, type: .otherStory),
+                             StoryData(image: firstVar, type: .otherStory)]
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -45,9 +56,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch type {
         case .story:
             let cell = tableView.dequeueReusableCell(withIdentifier: "StoriesTableViewCell", for: indexPath) as? StoriesTableViewCell
-            cell?.configure(with: arrayOfCellData[indexPath.row].image)
-            
+            cell?.configure(with: storyAuthorImages[indexPath.row])
             return cell ?? StoriesTableViewCell()
+            
         case .post:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImagesTableViewCell", for: indexPath) as? ImagesTableViewCell
             cell?.configure(with: arrayOfCellData[indexPath.row])

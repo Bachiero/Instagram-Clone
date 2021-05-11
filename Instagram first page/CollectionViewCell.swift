@@ -75,9 +75,8 @@ class FirstCollectionViewCell: UICollectionViewCell {
         imageView.layer.masksToBounds = true
         imageView.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
         imageView.layer.cornerRadius = 42.5
-        imageView.backgroundColor = .white
         imageView.layer.borderWidth = 2
-        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderColor = UIColor.clear.cgColor
         
         return imageView
     }()
@@ -155,4 +154,52 @@ class RectCollectionViewCell : UICollectionViewCell {
 
         myImageView.image = UIImage(named: name)
     }
+}
+
+
+class ProfileGalleryCollectionViewCell: UICollectionViewCell {
+    
+    static let identifier = "ProfileGalleryCollectionViewCell"
+    
+    private var myImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        imageView.layer.borderWidth = 0
+        return imageView
+    }()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+
+    }
+  
+    
+    
+    static func nib() -> UINib {
+        
+        return UINib(nibName: "ProfileGalleryCollectionViewCell", bundle: nil )
+    }
+    
+    
+    public func configure(with name: String) {
+
+        myImageView.image = UIImage(named: name)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(myImageView)
+    }
+    
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
 }

@@ -34,15 +34,16 @@ enum CellType {
 
 
 struct StoryData {
-    let cell: String
+    let image: [String]
     let type: StoryType
     
-    init(cell: String, type: StoryType) {
+    init(image: [String], type: StoryType) {
         
-        self.cell = cell
+        self.image = image
         self.type = type
     }
 }
+var storyAuthorImages = [StoryData] ()
 
 enum StoryType {
     
@@ -50,14 +51,23 @@ enum StoryType {
     case otherStory
 }
 
-struct StoryAuthor {
+
+
+
+enum ProfileCell {
     
-    let image: [String]
-    let name: String
+    case profileInfo
+    case gallery
+}
+
+struct Gallery {
     
-    init(image: [String], name: String){
+    let cellType: ProfileCell
+    let images: [String]
+    
+    init(cellType: ProfileCell, images: [String]) {
         
-        self.image = image
-        self.name = name
+        self.cellType = cellType
+        self.images = images
     }
 }

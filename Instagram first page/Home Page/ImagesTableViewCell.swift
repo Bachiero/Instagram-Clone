@@ -56,9 +56,6 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         self.postAuthor.image = model.postAuthor
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pageControl.numberOfPages = model?.count ?? 0
