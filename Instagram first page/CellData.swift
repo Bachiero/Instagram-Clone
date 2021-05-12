@@ -43,6 +43,8 @@ struct StoryData {
         self.type = type
     }
 }
+
+
 var storyAuthorImages = [StoryData] ()
 
 enum StoryType {
@@ -52,7 +54,7 @@ enum StoryType {
 }
 
 
-
+// Profile page
 
 enum ProfileCell {
     
@@ -71,3 +73,6 @@ struct Gallery {
         self.images = images
     }
 }
+
+
+

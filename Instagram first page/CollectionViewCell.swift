@@ -173,11 +173,7 @@ class ProfileGalleryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-
     }
-  
-    
     
     static func nib() -> UINib {
         
