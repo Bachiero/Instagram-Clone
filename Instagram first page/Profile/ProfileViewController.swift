@@ -18,25 +18,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     private var secondVar = ["panda1", "panda2", "panda3","panda1", "panda2"]
     private var thirdVar = ["cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3"]
     private var otherVar = ["car1", "cat1", "panda1","car1", "cat1", "panda1","car1", "cat1", "panda1"]
+    private var gallery = ["car1", "cat1", "panda1","panda1", "car2", "cat2","car3", "panda1","cat1", "cat2", "car3","panda1", "car2", "cat2","car3", "panda1","cat1" ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
         
         arrayOfCellData = [Gallery(cellType: .profileInfo, images: firstVar),
-                           Gallery(cellType: .gallery, images: firstVar)]
+                           Gallery(cellType: .gallery, images: gallery)]
         
-       
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        
         tableView.register(UINib(nibName: "ProfileInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileInfoTableViewCell")
         tableView.register(UINib(nibName: "ProfileGallerryTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileGallerryTableViewCell")
-        
-        
-       
         ProfileName.setTitle("bacho_bitsadze ⌄", for: .normal)
         ProfileName.frame = CGRect(x: 0, y: 0, width: 30, height: 10)
     }
@@ -68,8 +64,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-        return 350
+        let type = arrayOfCellData[indexPath.row].cellType
+        switch type {
+        case .profileInfo:
+        return 400
+        case .gallery:
+            return UIScreen.main.bounds.height
+        
+        }
+        
     }
     
     

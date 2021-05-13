@@ -166,8 +166,9 @@ class ProfileGalleryCollectionViewCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        imageView.layer.borderWidth = 0
+        imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 120)
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor.white.cgColor
         return imageView
     }()
     
@@ -180,6 +181,10 @@ class ProfileGalleryCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "ProfileGalleryCollectionViewCell", bundle: nil )
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        myImageView.frame = contentView.bounds
+    }
     
     public func configure(with name: String) {
 

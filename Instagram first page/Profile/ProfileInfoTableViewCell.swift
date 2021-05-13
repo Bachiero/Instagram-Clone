@@ -17,6 +17,8 @@ class ProfileInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var followersCount: UILabel!
     @IBOutlet weak var followingCount: UILabel!
     @IBOutlet weak var postButton: UIButton!
+    @IBOutlet weak var editProfile: UIButton!
+    @IBOutlet weak var dropDownButton: UIButton!
     
     
     
@@ -30,12 +32,21 @@ class ProfileInfoTableViewCell: UITableViewCell {
         followersCount.text = "10259"
         followingCount.text = "324"
         
-        postButton.layer.borderWidth = 1
         postButton.layer.borderColor = UIColor.white.cgColor
-        postButton.layer.cornerRadius = 12.5
+        postButton.layer.cornerRadius = 11
         postButton.layer.backgroundColor = UIColor.white.cgColor
-        postButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        postButton.layer.borderWidth = 0.3
+        postButton.frame = CGRect(x: 0, y: 0, width: 22, height: 22)
+        postButton.layer.borderWidth = 1/2
+        
+        editProfile.frame = CGRect(x: 0, y: 0, width: 300, height: 30)
+        editProfile.layer.cornerRadius = 5
+        editProfile.layer.borderWidth = 0.5
+        
+        dropDownButton.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
+        dropDownButton.backgroundColor = UIColor.systemBlue
+        dropDownButton.layer.cornerRadius = 5
+        
+        
         profileImage.clipsToBounds = true
         profileImage.contentMode = .scaleAspectFill
         profileImage.layer.masksToBounds = true
