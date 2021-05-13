@@ -39,14 +39,12 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         postAuthor.layer.masksToBounds = false
         postAuthor.layer.cornerRadius = 17.5
         postAuthor.clipsToBounds = true
-        self.selectionStyle = .none
         collectionView.addGestureRecognizer(doubleTapRecognizer)
         likeButton.addGestureRecognizer(singleTapRecognizer)
-        
         pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        self.selectionStyle = .none
     }
-    
     
     func configure(with model: CellData) {
 
@@ -56,7 +54,6 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         self.postAuthor.image = model.postAuthor
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pageControl.numberOfPages = model?.count ?? 0
         pageControl.isHidden = !( pageControl.numberOfPages > 1)
@@ -78,7 +75,6 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
     
-    
     // implementation of animations on doubleTap
     lazy var likeAnimator = LikaAnimator(container: contentView, layoutConstraint: likeImageViewWidthConstraint)
     lazy var doubleTapRecognizer: UITapGestureRecognizer = {
@@ -97,21 +93,20 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     @objc
     func didTap() {
-       
+        
         let isLiked = self.likeButton.isSelected
         if isLiked == false {
-        likeAnimator.animate { [weak self] in
-            self?.likeButton.tintColor = UIColor.systemPink
-            self?.likeButton.isSelected = true
-        }
-        }
-            else {
-        
-                likeAnimator.animate { [weak self] in
-                    self?.likeButton.tintColor = UIColor.black
-                    self?.likeButton.isSelected = false
+            likeAnimator.animate { [weak self] in
+                self?.likeButton.tintColor = UIColor.systemPink
+                self?.likeButton.isSelected = true
             }
+        }
+        else {
+            likeAnimator.animate { [weak self] in
+                self?.likeButton.tintColor = UIColor.black
+                self?.likeButton.isSelected = false
             }
         }
     }
+}
 

@@ -14,8 +14,6 @@ class ProfileGallerryTableViewCell: UITableViewCell, UICollectionViewDelegate, U
     @IBOutlet weak var collectionviewcell: UICollectionViewCell!
     private var model: [String]?
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
        
@@ -31,16 +29,13 @@ class ProfileGallerryTableViewCell: UITableViewCell, UICollectionViewDelegate, U
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
-        
         self.selectionStyle = .none
-        
     }
 
     func configure(with model: [String]) {
 
         self.model = model
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model?.count ?? 0
@@ -52,6 +47,4 @@ class ProfileGallerryTableViewCell: UITableViewCell, UICollectionViewDelegate, U
         cell.configure(with: model[indexPath.row])
         return cell
     }
-    
- 
 }

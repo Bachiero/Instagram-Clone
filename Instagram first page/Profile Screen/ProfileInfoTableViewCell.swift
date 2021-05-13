@@ -20,8 +20,6 @@ class ProfileInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var editProfile: UIButton!
     @IBOutlet weak var dropDownButton: UIButton!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         profileImage.image = #imageLiteral(resourceName: "car1")
@@ -46,26 +44,16 @@ class ProfileInfoTableViewCell: UITableViewCell {
         dropDownButton.backgroundColor = UIColor.systemBlue
         dropDownButton.layer.cornerRadius = 5
         
-        
         profileImage.clipsToBounds = true
         profileImage.contentMode = .scaleAspectFill
         profileImage.layer.masksToBounds = true
         profileImage.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
         profileImage.layer.cornerRadius = 45
         self.selectionStyle = .none
-        
-  
     }
-
-    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-    
-    
-    
-    
 }

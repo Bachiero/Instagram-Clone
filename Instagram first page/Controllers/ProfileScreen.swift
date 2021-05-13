@@ -7,19 +7,17 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var ProfileName: UIButton!
     @IBOutlet weak var tableView: UITableView!
    
-    
     var arrayOfCellData = [Gallery]()
     private var firstVar = ["car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3"]
     private var secondVar = ["panda1", "panda2", "panda3","panda1", "panda2"]
     private var thirdVar = ["cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3"]
     private var otherVar = ["car1", "cat1", "panda1","car1", "cat1", "panda1","car1", "cat1", "panda1"]
     private var gallery = ["car1", "cat1", "panda1","panda1", "car2", "cat2","car3", "panda1","cat1", "cat2", "car3","panda1", "car2", "cat2","car3", "panda1","cat1" ]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +35,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         ProfileName.frame = CGRect(x: 0, y: 0, width: 30, height: 10)
     }
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -49,33 +45,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         switch type{
         case .gallery:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileGallerryTableViewCell", for: indexPath) as? ProfileGallerryTableViewCell
-        cell?.configure(with: arrayOfCellData[indexPath.row].images)
+            cell?.configure(with: arrayOfCellData[indexPath.row].images)
             return cell ?? ProfileGallerryTableViewCell()
         case .profileInfo:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileInfoTableViewCell", for: indexPath) as? ProfileInfoTableViewCell
-        
             return cell ?? ProfileInfoTableViewCell()
-        
-        
         }
-            
-        }
-    
-    
-    
+    }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let type = arrayOfCellData[indexPath.row].cellType
         switch type {
         case .profileInfo:
-        return 400
+            return 400
         case .gallery:
             return UIScreen.main.bounds.height
-        
         }
-        
     }
-    
-    
 }
 
 

@@ -60,5 +60,4 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
             
         }
     }
-
 }

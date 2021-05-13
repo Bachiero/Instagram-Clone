@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,11 +17,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var thirdVar = ["cat1", "cat2", "cat3","cat1", "cat2"]
     private var otherVar = ["car1", "cat1", "panda1","car1", "cat1"]
     
-  
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         arrayOfCellData = [ CellData(type: .story, label: "Enzo_Ferrari", comment: "26 Likes",image: otherVar, postAuthor: #imageLiteral(resourceName: "car3")),
                             CellData(type: .post, label: "Bob_bob", comment: "93 Likes",image: firstVar, postAuthor: #imageLiteral(resourceName: "car1")),
