@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var ProfileName: UIButton!
     @IBOutlet weak var tableView: UITableView!

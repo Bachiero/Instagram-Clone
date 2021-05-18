@@ -22,6 +22,8 @@ class ProfileInfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        // TODO: - Decompose
         profileImage.image = #imageLiteral(resourceName: "car1")
         followers.text = "Followers"
         following.text = "Following"

@@ -9,6 +9,11 @@ import UIKit
 
 class LikaAnimator {
     
+   
+    
+  
+    
+    
     let container: UIView
     let layoutConstraint: NSLayoutConstraint
     
@@ -27,7 +32,7 @@ class LikaAnimator {
                        initialSpringVelocity: 2,
                        options: .curveLinear,
                        animations: { [weak self] in
-                        
+                        // TODO: - ანიმაცია სინქრონულია weak self არ გჭირდება
                         self?.container.layoutIfNeeded()
                         
                        })  { [weak self](_) in

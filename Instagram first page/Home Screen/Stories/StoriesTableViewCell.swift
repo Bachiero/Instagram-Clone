@@ -11,6 +11,8 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var collectionView:  UICollectionView!
     private var model: [String]?
+    
+    // TODO: - მიუხედავად იმისა რო ბექი არ არის, data გადმოაწოდე ყოველთვის გარედან, cell ის გამოყენება ყველგან უნდა შეგეძლოს მიუხედავად data სი.
     private let storyAuthorName: [String] = ["Bobby", "Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey"]
   
     override func awakeFromNib() {
@@ -21,8 +23,8 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         layout.sectionInset = UIEdgeInsets(top: -15, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
-        collectionView.register(CircleCollectionViewCell.self, forCellWithReuseIdentifier: CircleCollectionViewCell.identifier)
-        collectionView.register(FirstCollectionViewCell.self, forCellWithReuseIdentifier: FirstCollectionViewCell.identifier)
+        collectionView.register(StoriesCollectionViewCell.self, forCellWithReuseIdentifier: StoriesCollectionViewCell.identifier)
+        collectionView.register(FirstStoryCollectionViewCell.self, forCellWithReuseIdentifier: FirstStoryCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -35,6 +37,7 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         
     }
 
+    // TODO: - არ დაგრჩეს ხოლმე ესეთი გამოუყენებელი ხაზები. წაშალე
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -49,11 +52,11 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
         let type = storyAuthorImages[indexPath.row].type
         switch type {
         case .myStory:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstCollectionViewCell.identifier, for: indexPath) as! FirstCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FirstStoryCollectionViewCell.identifier, for: indexPath) as! FirstStoryCollectionViewCell
             cell.configure(with: model[indexPath.row])
             return cell
         case .otherStory:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CircleCollectionViewCell.identifier, for: indexPath) as! CircleCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoriesCollectionViewCell.identifier, for: indexPath) as! StoriesCollectionViewCell
             cell.configure(with: model[indexPath.row])
             cell.configureAuthor(with: storyAuthorName[indexPath.row])
             return cell

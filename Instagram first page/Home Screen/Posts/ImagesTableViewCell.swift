@@ -20,9 +20,28 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     private var model: [String]?
     
+    // TODO: - ცვლადები აღწერე ყოველთვის კლასის დასაწყისში
+    // implementation of animations on doubleTap
+    lazy var likeAnimator = LikaAnimator(container: contentView, layoutConstraint: likeImageViewWidthConstraint)
+    
+    lazy var doubleTapRecognizer: UITapGestureRecognizer = {
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        tapRecognizer.numberOfTapsRequired = 2
+        return tapRecognizer
+    }()
+    // implementation of animations on singleTap
+    lazy var singleTapRecognizer: UITapGestureRecognizer = {
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        tapRecognizer.numberOfTapsRequired = 1
+        return tapRecognizer
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        // TODO: - მეთოდები შეეცადე რო იყოს მოკლე და გასაგები, ლოგიკურად დაყოფილი. დეკომპოზიცია სჭირდება ამ კლასს.
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width , height: 400)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -49,8 +68,8 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     func configure(with model: CellData) {
 
         self.model = model.image
-        self.myLabel.text = model.comment
-        self.author.text = model.label
+        self.myLabel.text = model.likes
+        self.author.text = model.PostAuthorNickname
         self.postAuthor.image = model.postAuthor
     }
 
@@ -75,21 +94,6 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
     
-    // implementation of animations on doubleTap
-    lazy var likeAnimator = LikaAnimator(container: contentView, layoutConstraint: likeImageViewWidthConstraint)
-    lazy var doubleTapRecognizer: UITapGestureRecognizer = {
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
-        tapRecognizer.numberOfTapsRequired = 2
-        return tapRecognizer
-    }()
-    // implementation of animations on singleTap
-    lazy var singleTapRecognizer: UITapGestureRecognizer = {
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
-        tapRecognizer.numberOfTapsRequired = 1
-        return tapRecognizer
-    }()
     
     @objc
     func didTap() {
@@ -108,5 +112,6 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
             }
         }
     }
+   
 }
 
