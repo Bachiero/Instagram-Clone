@@ -17,18 +17,9 @@ class ProfileGallerryTableViewCell: UITableViewCell, UICollectionViewDelegate, U
     override func awakeFromNib() {
         super.awakeFromNib()
        
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width/3, height: 120)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        layout.scrollDirection = .vertical
-        collectionView.collectionViewLayout = layout
-        collectionView.register(ProfileGalleryCollectionViewCell.self, forCellWithReuseIdentifier: ProfileGalleryCollectionViewCell.identifier)
-        collectionView.showsHorizontalScrollIndicator = false
+        registerGalleryTableViewCell(collectionView: collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .white
         self.selectionStyle = .none
     }
 

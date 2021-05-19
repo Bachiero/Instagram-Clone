@@ -22,22 +22,12 @@ class ProfileGalleryCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    static func nib() -> UINib {
-        
-        return UINib(nibName: "ProfileGalleryCollectionViewCell", bundle: nil )
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         myImageView.frame = contentView.bounds
     }
     
     public func configure(with name: String) {
-
         myImageView.image = UIImage(named: name)
     }
     

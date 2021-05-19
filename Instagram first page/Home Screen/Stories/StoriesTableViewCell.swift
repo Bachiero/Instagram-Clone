@@ -12,35 +12,19 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     @IBOutlet weak var collectionView:  UICollectionView!
     private var model: [String]?
     
-    // TODO: - მიუხედავად იმისა რო ბექი არ არის, data გადმოაწოდე ყოველთვის გარედან, cell ის გამოყენება ყველგან უნდა შეგეძლოს მიუხედავად data სი.
-    private let storyAuthorName: [String] = ["Bobby", "Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey"]
-  
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 85 , height: 85)
-        layout.sectionInset = UIEdgeInsets(top: -15, left: 0, bottom: 0, right: 0)
-        layout.scrollDirection = .horizontal
-        collectionView.collectionViewLayout = layout
-        collectionView.register(StoriesCollectionViewCell.self, forCellWithReuseIdentifier: StoriesCollectionViewCell.identifier)
-        collectionView.register(FirstStoryCollectionViewCell.self, forCellWithReuseIdentifier: FirstStoryCollectionViewCell.identifier)
-        collectionView.showsHorizontalScrollIndicator = false
+        registerStoriesTableViewCell(collectionView: collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
     }
     
     func configure(with model: StoryData) {
     
         self.model = model.image
         
-    }
-
-    // TODO: - არ დაგრჩეს ხოლმე ესეთი გამოუყენებელი ხაზები. წაშალე
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

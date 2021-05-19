@@ -20,10 +20,8 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     private var model: [String]?
     
-    // TODO: - ცვლადები აღწერე ყოველთვის კლასის დასაწყისში
     // implementation of animations on doubleTap
     lazy var likeAnimator = LikaAnimator(container: contentView, layoutConstraint: likeImageViewWidthConstraint)
-    
     lazy var doubleTapRecognizer: UITapGestureRecognizer = {
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
@@ -32,7 +30,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     }()
     // implementation of animations on singleTap
     lazy var singleTapRecognizer: UITapGestureRecognizer = {
-        
+
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
         tapRecognizer.numberOfTapsRequired = 1
         return tapRecognizer
@@ -42,22 +40,11 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         super.awakeFromNib()
         
         // TODO: - მეთოდები შეეცადე რო იყოს მოკლე და გასაგები, ლოგიკურად დაყოფილი. დეკომპოზიცია სჭირდება ამ კლასს.
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width , height: 400)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        layout.scrollDirection = .horizontal
-        collectionView.collectionViewLayout = layout
-        collectionView.register(RectCollectionViewCell.self, forCellWithReuseIdentifier: RectCollectionViewCell.identifier)
-        collectionView.showsHorizontalScrollIndicator = false
+        registerPostTableViewCell(collectionView: collectionView)
+        roundedPostAuthorImage(image: postAuthor)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .white
-        postAuthor.layer.borderWidth = 0
-        postAuthor.layer.masksToBounds = false
-        postAuthor.layer.cornerRadius = 17.5
-        postAuthor.clipsToBounds = true
+        
         collectionView.addGestureRecognizer(doubleTapRecognizer)
         likeButton.addGestureRecognizer(singleTapRecognizer)
         pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
@@ -93,7 +80,6 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
-    
     
     @objc
     func didTap() {

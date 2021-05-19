@@ -11,9 +11,6 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    // TODO: ცვლადებს გარჩევადი სახელები დაარქვი რო სხვისთვისაც გასაგები იყოს რა არის
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

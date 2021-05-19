@@ -171,7 +171,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dropDownButton" destination="e1p-3o-uE6" id="uTT-nt-0nQ"/>
-                <outlet property="editProfile" destination="Li0-Ys-3mv" id="Zrd-xw-Lwx"/>
+                <outlet property="editProfileButton" destination="Li0-Ys-3mv" id="Zrd-xw-Lwx"/>
                 <outlet property="followers" destination="PFh-GK-Ger" id="Awf-mF-sJp"/>
                 <outlet property="followersCount" destination="Q2Z-ZY-e5O" id="AqM-kd-Ogy"/>
                 <outlet property="following" destination="Fwr-0t-y42" id="SOX-rh-viQ"/>

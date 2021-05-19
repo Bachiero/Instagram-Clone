@@ -12,17 +12,10 @@ class ProfileScreenViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var ProfileName: UIButton!
     @IBOutlet weak var tableView: UITableView!
    
-    var arrayOfCellData = [Gallery]()
-    private var firstVar = ["car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3","car1", "car2", "car3"]
-    private var secondVar = ["panda1", "panda2", "panda3","panda1", "panda2"]
-    private var thirdVar = ["cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3","cat1", "cat2", "cat3"]
-    private var otherVar = ["car1", "cat1", "panda1","car1", "cat1", "panda1","car1", "cat1", "panda1"]
-    private var gallery = ["car1", "cat1", "panda1","panda1", "car2", "cat2","car3", "panda1","cat1", "cat2", "car3","panda1", "car2", "cat2","car3", "panda1","cat1" ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        arrayOfCellData = [Gallery(cellType: .profileInfo, images: firstVar),
+        picturesForProfileScreen = [Gallery(cellType: .profileInfo, images: firstVar),
                            Gallery(cellType: .gallery, images: gallery)]
         
         self.tableView.delegate = self
@@ -31,7 +24,7 @@ class ProfileScreenViewController: UIViewController, UITableViewDelegate, UITabl
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         tableView.register(UINib(nibName: "ProfileInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileInfoTableViewCell")
         tableView.register(UINib(nibName: "ProfileGallerryTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileGallerryTableViewCell")
-        ProfileName.setTitle("bacho_bitsadze ⌄", for: .normal)
+        ProfileName.setTitle(profileName, for: .normal)
         ProfileName.frame = CGRect(x: 0, y: 0, width: 30, height: 10)
     }
     
@@ -41,11 +34,11 @@ class ProfileScreenViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let type = arrayOfCellData[indexPath.row].cellType
+        let type = picturesForProfileScreen[indexPath.row].cellType
         switch type{
         case .gallery:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileGallerryTableViewCell", for: indexPath) as? ProfileGallerryTableViewCell
-            cell?.configure(with: arrayOfCellData[indexPath.row].images)
+            cell?.configure(with: picturesForProfileScreen[indexPath.row].images)
             return cell ?? ProfileGallerryTableViewCell()
         case .profileInfo:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileInfoTableViewCell", for: indexPath) as? ProfileInfoTableViewCell
@@ -54,7 +47,7 @@ class ProfileScreenViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let type = arrayOfCellData[indexPath.row].cellType
+        let type = picturesForProfileScreen[indexPath.row].cellType
         switch type {
         case .profileInfo:
             return 400

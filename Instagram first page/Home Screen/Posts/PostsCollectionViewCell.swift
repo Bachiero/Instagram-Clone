@@ -21,14 +21,6 @@ class RectCollectionViewCell : UICollectionViewCell {
         return imageView
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    static func nib() -> UINib {
-        return UINib(nibName: "RectCollectionViewCell", bundle: nil )
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(myImageView)

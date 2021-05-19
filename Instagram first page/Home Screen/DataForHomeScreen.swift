@@ -50,3 +50,6 @@ enum StoryType {
 
 
 
+
+// TODO: - მიუხედავად იმისა რო ბექი არ არის, data გადმოაწოდე ყოველთვის გარედან, cell ის გამოყენება ყველგან უნდა შეგეძლოს მიუხედავად data სი.
+let storyAuthorName: [String] = ["Bobby", "Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey","Billy", "Jackson","Billie", "Michaele", "Javokhir", "Persey"]

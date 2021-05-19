@@ -29,4 +29,13 @@ struct Gallery {
 }
 
 
+let profileName = "bacho_bitsadze ⌄"
 
+let myProfileImage = #imageLiteral(resourceName: "car1")
+
+let myFollowers = "Followers"
+let meFollowing = "Following"
+let myPosts = "Posts"
+let myPostsCount = "500"
+let myFollowersCount = "10259"
+let meFollowingCount = "324"

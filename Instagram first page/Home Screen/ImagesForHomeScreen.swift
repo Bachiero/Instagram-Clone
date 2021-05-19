@@ -14,7 +14,7 @@ var arrayOfCellData = [CellData]()
 //MARK variable for Stories images (postButton or other story)
 var storyAuthorImages = [StoryData] ()
 
-
+// TODO: ცვლადებს გარჩევადი სახელები დაარქვი რო სხვისთვისაც გასაგები იყოს რა არის
  var carPictures = ["car1", "car2", "car3","car1", "car2"]
  var pandaPictures = ["panda1", "panda2", "panda3","panda1", "panda2"]
  var catPictures = ["cat1", "cat2", "cat3","cat1", "cat2"]

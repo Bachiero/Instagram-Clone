@@ -11,6 +11,9 @@ import UIKit
 // TODO: ერთ ფაილში შეეცადე ორი კლასი არ მოაქციო ხოლმე. კოდი აღარა მერე კითხვადი.
 class StoriesCollectionViewCell: UICollectionViewCell {
 
+    // TODO: - შეეცადე ვიუს დასმისას არასდროს გამოიყენო ფრეიმები. ყოველთვის ყველა ვიუ დააფიქსირე contraint ებით, იშვიათი გამონაკლისების გარდა.
+    let StoryAuthorNameLabel = UILabel(frame: CGRect(x: 0, y: 78, width: 80, height: 30))
+    
     static let identifier = "CircleCollectionViewCell"
     
     private var myImageView: UIImageView = {
@@ -32,13 +35,7 @@ class StoriesCollectionViewCell: UICollectionViewCell {
     }
     
     public func configureAuthor(with name: String){
-        titleLabel.text = name
-    }
-    
-    // TODO: - ეს ფუნქცია წესით არ დაგჭირდება collectionviewCell ის დროს.
-    static func nib() -> UINib {
-
-        return UINib(nibName: "CircleCollectionViewCell", bundle: nil )
+        StoryAuthorNameLabel.text = name
     }
 
     override func layoutSubviews() {
@@ -47,18 +44,15 @@ class StoriesCollectionViewCell: UICollectionViewCell {
         // TODO: 49 ხაზზე კომენტარი ამასაც შეეხება და სხვა კლასებსაც.
         myImageView.frame = contentView.bounds
     }
-
-    // TODO: - შეეცადე ვიუს დასმისას არასდროს გამოიყენო ფრეიმები. ყოველთვის ყველა ვიუ დააფიქსირე contraint ებით, იშვიათი გამონაკლისების გარდა.
-    let titleLabel = UILabel(frame: CGRect(x: 0, y: 78, width: 80, height: 30))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        titleLabel.text = "userName"
-        titleLabel.textColor = UIColor.black
-        titleLabel.font = UIFont(name:"chalkboard SE", size: 14)
-        titleLabel.textAlignment = NSTextAlignment.center
-        contentView.addSubview(titleLabel)
+        StoryAuthorNameLabel.text = "userName"
+        StoryAuthorNameLabel.textColor = UIColor.black
+        StoryAuthorNameLabel.font = UIFont(name:"chalkboard SE", size: 14)
+        StoryAuthorNameLabel.textAlignment = NSTextAlignment.center
+        contentView.addSubview(StoryAuthorNameLabel)
         contentView.addSubview(myImageView)
     }
 

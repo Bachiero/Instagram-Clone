@@ -28,6 +28,8 @@
 		2099E8B526545E4B001A9F76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2032FC2F261C976800CAE77E /* LaunchScreen.storyboard */; };
 		2099E8B626545E4B001A9F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2032FC2D261C976800CAE77E /* Assets.xcassets */; };
 		2099E8B826546633001A9F76 /* StoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099E8B726546633001A9F76 /* StoriesCollectionViewCell.swift */; };
+		2099E8BA26558139001A9F76 /* ImagesForProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099E8B926558139001A9F76 /* ImagesForProfileScreen.swift */; };
+		2099E8BC26558F0A001A9F76 /* Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099E8BB26558F0A001A9F76 /* Methods.swift */; };
 		20D0CCE2264731EE00E2BE20 /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0CCE1264731EE00E2BE20 /* ProfileScreenViewController.swift */; };
 		20D0CCE72647437400E2BE20 /* ProfileInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0CCE52647437400E2BE20 /* ProfileInfoTableViewCell.swift */; };
 		20D0CCEE2647444200E2BE20 /* ProfileGallerryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0CCEC2647444200E2BE20 /* ProfileGallerryTableViewCell.swift */; };
@@ -55,6 +57,8 @@
 		207325302654512500ECDE8B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		207325322654590F00ECDE8B /* PostsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCollectionViewCell.swift; sourceTree = "<group>"; };
 		2099E8B726546633001A9F76 /* StoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		2099E8B926558139001A9F76 /* ImagesForProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesForProfileScreen.swift; sourceTree = "<group>"; };
+		2099E8BB26558F0A001A9F76 /* Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Methods.swift; sourceTree = "<group>"; };
 		20D0CCE1264731EE00E2BE20 /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		20D0CCE52647437400E2BE20 /* ProfileInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewCell.swift; sourceTree = "<group>"; };
 		20D0CCE62647437400E2BE20 /* ProfileInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -73,11 +77,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		200AEFAA264D852E002369E2 /* Controllers */ = {
+		200AEFAA264D852E002369E2 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				2099E8BB26558F0A001A9F76 /* Methods.swift */,
 			);
-			path = Controllers;
+			path = Files;
 			sourceTree = "<group>";
 		};
 		200AEFB0264D871A002369E2 /* Home Screen */ = {
@@ -98,6 +103,7 @@
 			children = (
 				20D0CCE1264731EE00E2BE20 /* ProfileScreenViewController.swift */,
 				2073252C2654377C00ECDE8B /* DataForProfileScreen.swift */,
+				2099E8B926558139001A9F76 /* ImagesForProfileScreen.swift */,
 				2073252B265435B300ECDE8B /* Profile Info */,
 				2073252A265435AD00ECDE8B /* Gallery */,
 			);
@@ -123,7 +129,7 @@
 		2032FC23261C976700CAE77E /* Instagram first page */ = {
 			isa = PBXGroup;
 			children = (
-				200AEFAA264D852E002369E2 /* Controllers */,
+				200AEFAA264D852E002369E2 /* Files */,
 				200AEFB0264D871A002369E2 /* Home Screen */,
 				200AEFB1264D8723002369E2 /* Profile Screen */,
 				2032FC2A261C976700CAE77E /* Main.storyboard */,
@@ -257,6 +263,7 @@
 				2032FC25261C976700CAE77E /* AppDelegate.swift in Sources */,
 				204EAECA261F32140067F5A5 /* StoriesTableViewCell.swift in Sources */,
 				2073252F265437DE00ECDE8B /* ImagesForHomeScreen.swift in Sources */,
+				2099E8BC26558F0A001A9F76 /* Methods.swift in Sources */,
 				200AEFAE264D86B2002369E2 /* ProfileScreenCollectionViewCells.swift in Sources */,
 				20D0CCEE2647444200E2BE20 /* ProfileGallerryTableViewCell.swift in Sources */,
 				2073252D2654377C00ECDE8B /* DataForProfileScreen.swift in Sources */,
@@ -266,6 +273,7 @@
 				20D0CCE2264731EE00E2BE20 /* ProfileScreenViewController.swift in Sources */,
 				2039B8B7263C759300F57CF4 /* Animations.swift in Sources */,
 				2032FC27261C976700CAE77E /* SceneDelegate.swift in Sources */,
+				2099E8BA26558139001A9F76 /* ImagesForProfileScreen.swift in Sources */,
 				20D0CCE72647437400E2BE20 /* ProfileInfoTableViewCell.swift in Sources */,
 				207325332654590F00ECDE8B /* PostsCollectionViewCell.swift in Sources */,
 			);

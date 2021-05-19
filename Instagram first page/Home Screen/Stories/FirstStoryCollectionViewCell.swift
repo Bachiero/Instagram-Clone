@@ -11,6 +11,15 @@ class FirstStoryCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "FirstCollectionViewCell"
     
+    let addYourStoryButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "plus.circle.fill"), for: .normal)
+        button.titleLabel?.text = "Post"
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame = CGRect(x: 30, y: 30, width: 20, height: 20)
+        return button
+    }()
+    
     private var myImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -25,11 +34,6 @@ class FirstStoryCollectionViewCell: UICollectionViewCell {
 
     public func configure(with name: String) {
         myImageView.image = UIImage(named: name)
-    }
-    
-    static func nib() -> UINib {
-
-        return UINib(nibName: "FirstCollectionViewCell", bundle: nil )
     }
 
     override func layoutSubviews() {
@@ -46,6 +50,17 @@ class FirstStoryCollectionViewCell: UICollectionViewCell {
         titleLabel.textAlignment = NSTextAlignment.center
         contentView.addSubview(titleLabel)
         contentView.addSubview(myImageView)
+        contentView.addSubview(addYourStoryButton)
+//        myImageView.layer.zPosition = -5;
+//        addYourStoryButton.layer.zPosition = 5;
+        
+//        NSLayoutConstraint.activate([
+//            addYourStoryButton.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor, constant: 0),
+//            addYourStoryButton.topAnchor.constraint(equalTo: myImageView.topAnchor, constant: 0),
+//            addYourStoryButton.widthAnchor.constraint(equalToConstant: 50),
+//            addYourStoryButton.heightAnchor.constraint(equalToConstant: 50)
+//            ])
+
     }
 
     required init?(coder: NSCoder) {
