@@ -7,12 +7,17 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // ახალი კლასის აწყობა, ორი ფუნქციით. ვიყენებ პროტოკოლს სეტერით, ქომფლიშენ ნაწილში მექნება ერეი. 
+        
+        //how to inject data to first viewcontroller? Google
+        
         
         // TODO: შეეცადე დაამსგავსო ნამდვილ აპლიკაციას. როდესაც back არ გაქვს, უნდა დამოქო ბექი. viewController ში hard ად გაწერილ ცვლადებს ვერ დამოქავ. ნორმალური სტრუქტურა შეუქმენი და ეს ცვლადები გადმოეცი.
         arrayOfCellData = [ CellData(type: .story, PostAuthorNickname: nicknames.randomElement()!, likes: random(number: 1500),image: randomPictures, postAuthor: postAuthorLittleImageOne!),
@@ -35,7 +40,10 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     }
     
-    // TODO: როდესაც კლასს რომელიმე პროტოკოლს uconform ებ, შეეცადო ყოველთვის გაიტანო extension ში, უფრო კითხვადი რომ იყოს
+}
+
+extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayOfCellData.count
     }
@@ -57,15 +65,15 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     // TODO: Constraint ები გაუწერე სწორად რომ autodimension ების აღება შეძლოს
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let type = arrayOfCellData[indexPath.row].type
-        switch type {
-        case .story:
-            return UITableView.automaticDimension
-        case .post:
-            return 480
-        }
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let type = arrayOfCellData[indexPath.row].type
+//        switch type {
+//        case .story:
+//            return UITableView.automaticDimension
+//        case .post:
+//            return 480
+//        }
+//    }
 }
 
 

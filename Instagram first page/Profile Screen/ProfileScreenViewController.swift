@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ProfileScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileScreenViewController: UIViewController {
+    
+    // სთორი ბორდზე, პროფილის გვერდზე უნდა ჩავსვა სქროლ ვიუ, სადაც მექნება 2 ვიუ. ზედა და ქვედა, ქვემოთ მექნება ორი ვიუ, gesture recoginzer ით დაკავშირებული და 2 ქოლექშენით. 
     
     @IBOutlet weak var ProfileName: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +29,10 @@ class ProfileScreenViewController: UIViewController, UITableViewDelegate, UITabl
         ProfileName.setTitle(profileName, for: .normal)
         ProfileName.frame = CGRect(x: 0, y: 0, width: 30, height: 10)
     }
+}
+    
+
+extension ProfileScreenViewController:  UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2

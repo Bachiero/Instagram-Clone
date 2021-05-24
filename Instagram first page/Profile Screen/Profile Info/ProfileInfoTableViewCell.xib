@@ -83,6 +83,7 @@
                             <constraint firstAttribute="width" constant="25" id="Hy1-6v-ng8"/>
                             <constraint firstAttribute="height" constant="25" id="Wdh-sL-DdI"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="tintColor" name="AccentColor"/>
                         <state key="normal" image="plus.circle.fill" catalog="system"/>
                     </button>

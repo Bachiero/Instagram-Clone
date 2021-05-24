@@ -13,10 +13,14 @@ class FirstStoryCollectionViewCell: UICollectionViewCell {
     
     let addYourStoryButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "plus.circle.fill"), for: .normal)
+        button.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
         button.titleLabel?.text = "Post"
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.frame = CGRect(x: 30, y: 30, width: 20, height: 20)
+        button.tintColor = .systemBlue
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = 12.5
+        button.layer.backgroundColor = UIColor.white.cgColor
         return button
     }()
     
@@ -51,15 +55,15 @@ class FirstStoryCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(myImageView)
         contentView.addSubview(addYourStoryButton)
-//        myImageView.layer.zPosition = -5;
-//        addYourStoryButton.layer.zPosition = 5;
-        
-//        NSLayoutConstraint.activate([
-//            addYourStoryButton.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor, constant: 0),
-//            addYourStoryButton.topAnchor.constraint(equalTo: myImageView.topAnchor, constant: 0),
-//            addYourStoryButton.widthAnchor.constraint(equalToConstant: 50),
-//            addYourStoryButton.heightAnchor.constraint(equalToConstant: 50)
-//            ])
+        myImageView.layer.zPosition = -5;
+        addYourStoryButton.layer.zPosition = 5;
+//
+        NSLayoutConstraint.activate([
+            addYourStoryButton.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor, constant: 60),
+            addYourStoryButton.topAnchor.constraint(equalTo: myImageView.topAnchor, constant: 60),
+            addYourStoryButton.widthAnchor.constraint(equalToConstant: 25),
+            addYourStoryButton.heightAnchor.constraint(equalToConstant: 25)
+            ])
 
     }
 

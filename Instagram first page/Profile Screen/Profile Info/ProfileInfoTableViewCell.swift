@@ -23,7 +23,6 @@ class ProfileInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // TODO: - Decompose
         profileImage.image = myProfileImage
         followers.text = myFollowers
         following.text = meFollowing

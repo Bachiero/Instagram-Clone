@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+class ImagesTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView:  UICollectionView!
     @IBOutlet weak var myLabel: UILabel!
@@ -20,7 +19,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     
     private var model: [String]?
     
-    // implementation of animations on doubleTap
+    //MARK implementation of animations on doubleTap
     lazy var likeAnimator = LikaAnimator(container: contentView, layoutConstraint: likeImageViewWidthConstraint)
     lazy var doubleTapRecognizer: UITapGestureRecognizer = {
         
@@ -28,7 +27,7 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
         tapRecognizer.numberOfTapsRequired = 2
         return tapRecognizer
     }()
-    // implementation of animations on singleTap
+    //MARK implementation of animations on singleTap
     lazy var singleTapRecognizer: UITapGestureRecognizer = {
 
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
@@ -39,9 +38,8 @@ class ImagesTableViewCell: UITableViewCell,UICollectionViewDelegate, UICollectio
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // TODO: - მეთოდები შეეცადე რო იყოს მოკლე და გასაგები, ლოგიკურად დაყოფილი. დეკომპოზიცია სჭირდება ამ კლასს.
         registerPostTableViewCell(collectionView: collectionView)
-        roundedPostAuthorImage(image: postAuthor)
+        postAuthor.round(withRadius: 17.5)
         collectionView.delegate = self
         collectionView.dataSource = self
         

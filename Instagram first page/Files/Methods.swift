@@ -50,18 +50,9 @@ func registerGalleryTableViewCell(collectionView: UICollectionView) {
     collectionView.backgroundColor = .white
 }
 
-func roundedPostAuthorImage(image: UIImageView) {
-    
-   image.layer.borderWidth = 0
-   image.layer.masksToBounds = false
-   image.layer.cornerRadius = 17.5
-   image.clipsToBounds = true
-   image.contentMode = .scaleAspectFill
-}
-
 
 func myPostButton(button: UIButton) {
-
+    
 button.layer.borderColor = UIColor.white.cgColor
 button.layer.cornerRadius = 11
 button.layer.backgroundColor = UIColor.white.cgColor
@@ -90,4 +81,18 @@ func myProfileImage(image: UIImageView) {
    image.layer.masksToBounds = true
    image.frame = CGRect(x: 0, y: 0, width: 90, height: 90)
    image.layer.cornerRadius = 45
+}
+
+
+extension UIImageView {
+    
+    func round(withRadius radius: CGFloat) {
+        
+        self.layer.borderWidth = 0
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = radius
+        self.clipsToBounds = true
+        self.contentMode = .scaleAspectFill
+    }
+    
 }
